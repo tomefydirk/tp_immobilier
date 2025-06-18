@@ -9,6 +9,7 @@ include("../inc/display_function.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../asset/style.css">
+    <link href="./../asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
@@ -21,8 +22,9 @@ include("../inc/display_function.php");
     </nav>
 </header>
 
+    <main>
+        <?php display_all_propriete();?>
+    </main>
 
-
-    <?php display_all_propriete();?>
 </body>
 </html>

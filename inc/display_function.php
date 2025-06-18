@@ -1,33 +1,35 @@
 <?php 
 include("sql_function.php");
 ?>
-
-<?php function display_all_propriete() {
+<?php 
+function display_all_propriete() {
     $to_display = get_all_propriete();
     ?>
-   
-    <div class="propriete-grid">
-        <?php foreach ($to_display as $iter){ ?>
-                <a href="./fiche.php?id_propriete=<?=$iter["id_propriete"]?>">
-                
-                
-            <div class="propriete-card">
-                <img class="propriete-img" src="../asset/base.jpg" alt="Propriété">
-                <div class="propriete-info">
-                 
-                    <h1><?= htmlspecialchars($iter["adresse"]) ?></h1>
-                    <p><?= htmlspecialchars($iter["ville"]) ?></p>
-                     <h2><?= htmlspecialchars($iter["statut_vente"]) ?></h2>
-                    <h3><?= number_format($iter["prix"], 2, ',', ' ') ?> €</h3>
+    
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <?php foreach ($to_display as $iter) { ?>
+                <div class="col">
+                    <a href="./fiche.php?id_propriete=<?= $iter["id_propriete"] ?>" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm">
+                            <img src="../asset/base.jpg" class="card-img-top" alt="Propriété">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= htmlspecialchars($iter["adresse"]) ?></h5>
+                                <p class="card-text mb-1"><?= htmlspecialchars($iter["ville"]) ?></p>
+                                <p class="card-text text-muted"><?= htmlspecialchars($iter["statut_vente"]) ?></p>
+                                <h6 class="card-subtitle text-success"><?= number_format($iter["prix"], 2, ',', ' ') ?> €</h6>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-
-            </a>
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
+    
     <?php
 }
 ?>
+
 <?php function display_all_propriete_agent($id){?>
     <?php $to_display=get_info_agent_all($id);?>
      <div class="propriete-grid">

@@ -9,29 +9,8 @@ $id=$_GET["id_propriete"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxury Villa House</title>
    <link rel="stylesheet" href="../asset/style.css">
-    <style>
-        .price-tag {
-            color: green;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .gallery-img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .section-title {
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        .agent-info img {
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-        }
-    </style>
+   <link href="./../asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   
 </head>
 <body>
      <header class="main-header">
@@ -43,7 +22,9 @@ $id=$_GET["id_propriete"];
         <a href="#">Contact</a>
     </nav>
 </header>
+    <main>
+          <?=display_propriete($id);?>
+    </main>
 
-  <?=display_propriete($id);?>
 </body>
 </html>
